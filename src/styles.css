@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@plugin "daisyui" {
+    themes: light --default, dark --prefersdark;
+}
+
+.centered-page {
+  @apply mx-auto my-6 max-w-screen-lg;
+}
+.centered-page.sm {
+  @apply w-96;
+}
+
+.page-title {
+  @apply my-6 text-3xl;
+}
+
+input {
+  @apply rounded-xl border border-black;
+}
