@@ -1,0 +1,52 @@
+
+<!--Control flow: @if, @else, @for
+* variabili contestuali: count, index, first, last, even, odd
+* accessibili tramite: $
+-->
+<div class="centered-page">
+
+    <h1 class="page-title">Todo List with Signals</h1>
+
+    <input
+        type="text"
+        placeholder="Add a Todo Item"
+        #inputRef
+        (keydown.enter)="addTodo(inputRef)"
+        class="m-2 input input-primary"
+    />
+    <hr class="m-3">
+    <ul class="mt-5">
+        <!--
+        <li *ngFor="let todo of todos(); let i = index">{{todo.title}}</li>
+        -->
+        
+        @for (todo of todos(); track todo.id) {
+            <li class="flex justify-evenly">
+                <div>
+                    <input type="checkbox" [checked]="todo.isCompleted"
+                    (change)="toggleTodo(todo)">
+                    <span [ngClass]="{'line-through': todo.isCompleted}">{{ todo.title}}</span>
+                </div>
+                
+                <button (click)="removeTodo(todo)" class="btn">
+                    <span class="material-symbols-outlined"> delete </span>
+                </button>
+                <button (click)="editTodo(todo)" class="btn">
+                    <span class="material-symbols-outlined"> edit </span>
+                </button>
+            </li>
+        }
+    </ul>
+
+</div>
+
+
+<!-- Esercizio 1: Sostituire con la nuova sintassi control flow-->
+
+<!-- Esercizio 2: Implementare un metodo per aggiungere delle
+ Todo alla lista al click invio
+ -->
+
+<!-- Esercizio 3: Implementare un metodo per eliminare delle
+ Todo dalla lista al click di un button
+ -->

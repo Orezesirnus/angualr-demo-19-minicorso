@@ -1,0 +1,14 @@
+<div class="centered-page">
+
+    <h1 class="page-title">Todo Edit with Service</h1>
+
+    <input
+        type="text"
+        placeholder="Edit Todo's Label"
+        class="m-2 input input-primary"
+        #inputRef
+        [(ngModel)]="description"
+    />
+    <button class="btn btn-primary" (click)="apply()">Apply</button>
+
+</div>

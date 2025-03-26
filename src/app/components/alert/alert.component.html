@@ -1,0 +1,32 @@
+<div role="alert" class="alert alert-vertical sm:alert-horizontal" 
+    [ngClass]="{
+        'alert-info': alertStyle === 'info',
+        'alert-success': alertStyle === 'success',
+        'alert-error': alertStyle === 'error'
+    }"
+>
+
+    <app-icon-variant [variant]="alertStyle"></app-icon-variant>
+
+    <!-- <span>{{text}}</span> -->
+    <div>
+        <ng-content></ng-content>
+    </div>
+    
+    <!--Contenuto-->
+    
+    <div class="row" [style.width.rem]="10">
+        <button class="btn bg-error-content col-6" (click)="onDeny.emit('Booo for denying!')">
+            {{denyLabel}}
+        </button>
+        <button class="btn bg-success-content col-6" (click)="onAccept.emit()">
+            {{acceptLabel}}
+        </button>
+    </div>
+</div>
+
+<!-- Esercizio 1: Creare output che vengono scatenati quando si
+ clicca Deny e Accept -->
+
+ <!-- Esercizio 2: Creare nuovo input che rappresenta le varianit dell'alert
+  info, success, error -->

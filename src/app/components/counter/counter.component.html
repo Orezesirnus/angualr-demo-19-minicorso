@@ -1,0 +1,18 @@
+<div class="centered-page">
+
+    <h1 class="page-title">Counter component</h1>
+    <button class="btn" (click)="decrement()">-</button>
+    <span [ngClass]="isZeroColor()">{{counter()}}</span>
+    <button class="btn" (click)="increment()">+</button>
+
+    <button *ngIf="!isZero()" class="btn" (click)="reset()">reset</button>
+
+</div>
+
+<!-- Esercizio 1: Utilizzare signal computed
+ per verificare se il valore di counter è 0 
+ e far apparire il button reset solo quando counter != 0-->
+
+ <!-- Esercizione 2: Utilizzare un computer per modificare
+  colore scritta "counter" quando counter !=0
+ -->

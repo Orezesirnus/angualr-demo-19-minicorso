@@ -1,0 +1,14 @@
+<div class="centered-page">
+    <div class="mockup-phone border-primary">
+        <div class="mockup-phone-camera"></div>
+        <div class="mockup-phone-display relative">
+            <img [alt]="alt" [src]="src" [style.width.%]="size"/>
+            @if (show) {
+                <span class="absolute top-1/2 right-1/3 left-1/3 text-2xl">
+                    {{alt}}
+                </span>
+            }
+        </div>
+    </div>
+</div>
+
